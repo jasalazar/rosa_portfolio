@@ -1,0 +1,27 @@
+<h1>Listing admin_artists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sinopsis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_artists.each do |admin_artist| %>
+      <tr>
+        <td><%= admin_artist.name %></td>
+        <td><%= admin_artist.sinopsis %></td>
+        <td><%= link_to 'Show', admin_artist %></td>
+        <td><%= link_to 'Edit', edit_admin_artist_path(admin_artist) %></td>
+        <td><%= link_to 'Destroy', admin_artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Artist', new_admin_artist_path %>
